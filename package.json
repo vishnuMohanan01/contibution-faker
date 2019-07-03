@@ -1,0 +1,24 @@
+{
+  "name": "typical-client-server",
+  "version": "1.0.0",
+  "description": "My idiotic github bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Iam-VM/typical-client-server.git"
+  },
+  "author": "Iam-VM",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Iam-VM/typical-client-server/issues"
+  },
+  "homepage": "https://github.com/Iam-VM/typical-client-server#readme",
+  "dependencies": {
+    "moment": "^2.24.0",
+    "random": "^2.2.0",
+    "simple-git": "^1.132.0"
+  }
+}
