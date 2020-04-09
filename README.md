@@ -2,8 +2,7 @@
 
 A primitive node based script that make the user's contribution calender look rich and green.
 
-## Getting Started (underline)
-----------
+## Getting Started
 
 
 ### Prerequisites
@@ -14,14 +13,13 @@ A primitive node based script that make the user's contribution calender look ri
 
 ### Installing
 
-Clone this project
+Clone
 
 ```
 git clone git@github.com:Iam-VM/contibution-faker.git 
 ```
 
-## Usage (underline)
----------
+## Usage 
 
 Open terminal in the project directory (directory obtained after cloning),
 
