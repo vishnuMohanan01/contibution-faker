@@ -1,23 +1,43 @@
-const git = require("simple-git");
+const git = require("simple-git/promise")();
 const moment = require("moment");
 const jsonfile = require("jsonfile");
 const crypto = require("crypto");
 const random = require("random");
 
-const PATH = "./gibberish.json";
-const initial_date = moment().subtract(1, 'y'); 
-const final_date = moment().format();
 
-while (initial_date.format() !== final_date){
-    let i = 1;
-    while(i <= random.int(min = i, max = 5)){
-        jsonfile.writeFile(PATH, {"secreteKey" : crypto.randomBytes(32).toString("hex")})
-        .then(console.log(initial_date))
-        .catch(err => console.error("error occured" + err));
-        git().add(".").commit("This is an idiotic commit", {"--date" : initial_date.format()}).push("origin", "master");
-        i = i+1;
+
+
+
+let initial_date = moment().subtract(1, 'y'); 
+const final_date = moment().format('MMMM Do YYYY');
+
+
+
+const process = async (initial_date, final_date) => {
+        jsonfile.writeFile("./gibberish.json", {"secrete_key" : crypto.randomBytes(32).toString("hex")});
+        await git.add("./gibberish.json");
+        await git.commit("commit by bot", {"--date" : initial_date.format()});
+        await git.push(['-u', 'origin' ,'master']);
+};
+
+
+
+
+const commit = async (initial_date, final_date) => {
+    if (initial_date.format('MMMM Do YYYY') === final_date){
+        console.log("---End Process---");
+        return;
     }
-    i = 1;
-    initial_date.add(1, "d").format();
-}
+    else{
+        for (var i = 1; i <= random.int(min = 1, max = 7); i++){
+            await process(initial_date, final_date);
+        }
+        console.log(`Added ${i} Commits for the Date: ${initial_date.format("MMMM Do YYYY")}`);
+        await commit(initial_date.add(1, 'days'), final_date);
+        return;
+    }
+};
+
+
+commit(initial_date, final_date);
 
