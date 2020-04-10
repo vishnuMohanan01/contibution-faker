@@ -1,6 +1,6 @@
 # contribution-faker
 
-A primitive node based script that make the user's contribution calender look rich and green.
+A primitive node based script that makes your **Github contribution calender look rich and green**.
 
 ## Getting Started
 
