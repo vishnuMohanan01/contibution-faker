@@ -21,7 +21,7 @@ git clone git@github.com:Iam-VM/contibution-faker.git
 
 ## Usage 
 
-Open terminal in the project directory (directory obtained after cloning),
+Open terminal in the cloned directory,
 
 Run 
 
